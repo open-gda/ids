@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate id
+      - name: Validate ids list
         run: |
           ./check_numbers.sh
       - name: Setup Pages
@@ -28,3 +28,12 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Set up environment
+          run: |
+            echo "GITLAB_PROJECT_ID=${{ secrets.GITLAB_PROJECT_ID }}" >> $GITHUB_ENV
+            echo "GITLAB_ACCESS_TOKEN=${{ secrets.GITLAB_ACCESS_TOKEN }}" >> $GITHUB_ENV
+
+      - name: Run GitLab Pipelines
+        run: |
+          chmod +x ./run_pipelines.sh
+          ./list_pipelines.sh
