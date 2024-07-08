@@ -29,7 +29,8 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
       - name: Run GitLab Pipelines
+        env:
+          GITLAB_PROJECT_ID: ${{ secrets.GITLAB_PROJECT_ID }}
+          GITLAB_ACCESS_TOKEN: ${{ secrets.GITLAB_ACCESS_TOKEN }}
         run: |
-          echo "GITLAB_PROJECT_ID=${{ secrets.GITLAB_PROJECT_ID }}" >> $GITHUB_ENV
-          echo "GITLAB_ACCESS_TOKEN=${{ secrets.GITLAB_ACCESS_TOKEN }}" >> $GITHUB_ENV
-          ./run_pipelines.sh
+          ./run_pipelines.sh "$GITLAB_PROJECT_ID" "$GITLAB_ACCESS_TOKEN"

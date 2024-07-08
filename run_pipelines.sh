@@ -1,7 +1,7 @@
 set -e
 GITLAB_API_URL="https://gitlab.com/api/v4"
-PROJECT_ID="$GITLAB_PROJECT_ID"
-ACCESS_TOKEN="$GITLAB_ACCESS_TOKEN"
+PROJECT_ID="$1"
+ACCESS_TOKEN="$2"
 BRANCH="master"
 
 response=$(curl --silent --request POST "$GITLAB_API_URL/projects/$PROJECT_ID/pipeline" \
