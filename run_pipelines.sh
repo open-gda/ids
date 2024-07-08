@@ -15,4 +15,5 @@ if [ "$pipeline_id" != "null" ]; then
   echo "Response API: $response"
 else
   echo "Pipeline failed. Response API: $response"
+  exit 1
 fi
