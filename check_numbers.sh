@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 # Nazwa pliku do sprawdzenia
-FILE="list.txt"
+FILE="public/list.txt"
 
 # Sprawdzenie, czy plik istnieje
 if [ ! -f "$FILE" ]; then
