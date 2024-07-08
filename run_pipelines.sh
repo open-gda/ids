@@ -12,6 +12,7 @@ pipeline_id=$(echo $response | jq -r '.id')
 
 if [ "$pipeline_id" != "null" ]; then
   echo "Pipeline run with success. ID Pipeline: $pipeline_id"
+  echo "Response API: $response"
 else
   echo "Pipeline failed. Response API: $response"
 fi
