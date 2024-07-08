@@ -10,8 +10,8 @@ if [ ! -f "$FILE" ]; then
 fi
 
 if grep -qE '^[0-9]+(,[0-9]+)*$' "$FILE"; then
-  echo "Plik zawiera wyłącznie liczby całkowite oddzielone przecinkami."
+  echo "Plik should contains only numbers"
 else
-  echo "Plik nie zawiera wyłącznie liczb całkowitych oddzielonych przecinkami."
+  echo "Wrong data format"
   exit 1
 fi
