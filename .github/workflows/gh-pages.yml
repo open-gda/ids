@@ -35,5 +35,4 @@ jobs:
 
       - name: Run GitLab Pipelines
         run: |
-          chmod +x ./run_pipelines.sh
-          ./list_pipelines.sh
+          ./run_pipelines.sh
