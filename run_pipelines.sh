@@ -1,3 +1,4 @@
+set -e
 GITLAB_API_URL="https://gitlab.com/api/v4"
 PROJECT_ID="$GITLAB_PROJECT_ID"
 ACCESS_TOKEN="$GITLAB_ACCESS_TOKEN"
