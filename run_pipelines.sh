@@ -1,5 +1,5 @@
 set -e
-GITLAB_API_URL="https://gitlab.com/api/v4"
+GITLAB_API_URL="https://gitlab.dac.digital/api/v4"
 PROJECT_ID="$1"
 ACCESS_TOKEN="$2"
 BRANCH="master"
